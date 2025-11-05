@@ -192,13 +192,13 @@
         }
     },
     "storage": {
-        "engine": "github",
+        "engine": "gist",
         "base": "https://api.github.com",
         "domain": "https://gist.github.com",
         "items": {
             "xxx-clash": {
                 "username": "fgkhi",
-                "folderid": "",
+                "folderid": "48c12a6eabef69126934467e4cf72917",
                 "fileid": "clash-subs.json"
             },
             "xxx-singbox": {
@@ -210,12 +210,12 @@
             },
             "crawledsubs": {
                 "username": "fgkhi",
-                "folderid": "",
+                "folderid": "48c12a6eabef69126934467e4cf72917",
                 "fileid": "aggregated-subs.txt"
             },
             "crawledproxies": {
                 "username": "fgkhi",
-                "folderid": "",
+                "folderid": "48c12a6eabef69126934467e4cf72917",
                 "fileid": "aggregated-proxies.txt"
             }
         }
