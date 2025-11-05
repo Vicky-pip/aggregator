@@ -53,6 +53,9 @@ jobs:
 
       - name: Process
         run: python -u subscribe/process.py --overwrite
+      - name: Debug Environment
+        run: |
+              echo "GH_TOKEN starts with: ${GH_TOKEN:0:5}"
 
       - name: Timestamp
         run: date
