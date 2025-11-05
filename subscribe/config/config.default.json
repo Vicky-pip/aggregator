@@ -41,116 +41,134 @@
             }
         }
     ],
-    "crawl": {
-        "enable": true,
-        "exclude": "",
-        "threshold": 5,
-        "singlelink": true,
-        "persist": {
-            "subs": "crawledsubs",
-            "proxies": "crawledproxies"
-        },
+   "crawl": {
+  "enable": true,
+  "exclude": "",
+  "threshold": 5,
+  "singlelink": true,
+  "persist": {
+    "subs": "crawledsubs",
+    "proxies": "crawledproxies"
+  },
+  "config": {
+    "rename": "",
+    "include": "v2ray|clash|订阅|节点|proxy|机场",
+    "exclude": "色情|VPN付费|广告",
+    "xxxxxxx": ""
+  },
+  "telegram": {
+    "enable": true,
+    "pages": 5,
+    "exclude": "bot",
+    "users": {
+      "channel": {
+        "include": "v2ray_subs|node_share|freev2raysub",
+        "exclude": "chatgpt|proxyapp",
         "config": {
-            "rename": "",
-            "include": "",
-            "exclude": "",
-            "xxxxxxx": ""
+          "rename": "TG频道订阅源"
         },
-        "telegram": {
-            "enable": true,
-            "pages": 5,
-            "exclude": "",
-            "users": {
-                "channel": {
-                    "include": "",
-                    "exclude": "",
-                    "config": {
-                        "rename": "",
-                        "xxxxxx": ""
-                    },
-                    "push_to": []
-                }
-            }
+        "push_to": ["xxx-v2ray", "xxx-clash", "xxx-singbox"]
+      }
+    }
+  },
+  "github": {
+    "enable": true,
+    "pages": 2,
+    "push_to": ["xxx-v2ray"],
+    "exclude": "backup|mirror",
+    "spams": ["spam", "test", "fake"]
+  },
+  "twitter": {
+    "enable": true,
+    "users": {
+      "username": {
+        "enable": true,
+        "num": 30,
+        "include": "freev2ray|clashsub|v2cross",
+        "exclude": "vpnstore",
+        "config": {
+          "rename": "推特节点源"
         },
-        "google": {
-            "enable": false,
-            "exclude": "",
-            "limits": 100,
-            "notinurl": [],
-            "push_to": []
+        "push_to": ["xxx-clash"]
+      }
+    }
+  },
+  "google": {
+    "enable": false,
+    "exclude": "",
+    "limits": 50,
+    "notinurl": ["facebook", "reddit"],
+    "push_to": []
+  },
+  "yandex": {
+    "enable": false,
+    "exclude": "",
+    "within": 3,
+    "pages": 3,
+    "notinurl": [],
+    "push_to": []
+  },
+  "repositories": [
+    {
+      "enable": true,
+      "username": "v2fly",
+      "repo_name": "v2ray-core",
+      "commits": 3,
+      "exclude": "",
+      "push_to": ["xxx-v2ray"]
+    },
+    {
+      "enable": true,
+      "username": "Fndroid",
+      "repo_name": "clash_for_windows_pkg",
+      "commits": 2,
+      "exclude": "",
+      "push_to": ["xxx-clash"]
+    }
+  ],
+  "pages": [
+    {
+      "enable": true,
+      "url": "https://freefq.com/v2ray/",
+      "include": "v2ray|clash|sub",
+      "exclude": "广告|购买",
+      "multiple": true,
+      "placeholder": "",
+      "start": 1,
+      "end": 5,
+      "config": {
+        "rename": "FreeFQ节点源"
+      },
+      "push_to": ["xxx-v2ray", "xxx-clash"]
+    },
+    {
+      "enable": true,
+      "url": "https://clashnode.com/",
+      "include": "clash|订阅",
+      "exclude": "购买|VPN",
+      "multiple": false,
+      "placeholder": "",
+      "config": {
+        "rename": "ClashNode聚合站"
+      },
+      "push_to": ["xxx-clash"]
+    }
+  ],
+  "scripts": [
+    {
+      "enable": false,
+      "script": "custom_crawl#parse_subs",
+      "params": {
+        "persist": {
+          "fileid": ""
         },
-        "yandex": {
-            "enable": false,
-            "exclude": "",
-            "within": 3,
-            "pages": 5,
-            "notinurl": [],
-            "push_to": []
-        },
-        "github": {
-            "enable": true,
-            "pages": 2,
-            "push_to": [],
-            "exclude": "",
-            "spams": []
-        },
-        "twitter": {
-            "enable": true,
-            "users": {
-                "username": {
-                    "enable": true,
-                    "num": 30,
-                    "include": "",
-                    "exclude": "",
-                    "config": {
-                        "rename": "",
-                        "xxxxxx": ""
-                    },
-                    "push_to": []
-                }
-            }
-        },
-        "repositories": [
-            {
-                "enable": false,
-                "username": "",
-                "repo_name": "",
-                "commits": 3,
-                "exclude": "",
-                "push_to": []
-            }
-        ],
-        "pages": [
-            {
-                "enable": true,
-                "url": "",
-                "include": "",
-                "exclude": "",
-                "multiple": true,
-                "placeholder": "",
-                "start": 1,
-                "end": 10,
-                "config": {
-                    "rename": ""
-                },
-                "push_to": []
-            }
-        ],
-        "scripts": [
-            {
-                "enable": false,
-                "script": "file#function",
-                "params": {
-                    "persist": {
-                        "fileid": ""
-                    },
-                    "any": "xxx",
-                    "config": {
-                        "enable": true,
-                        "liveness": true,
-                        "exclude": "",
-                        "rename": "",
-                        "push_to": []
+        "any": "extra",
+        "config": {
+          "enable": true,
+          "liveness": true,
+          "exclude": "",
+          "rename": "",
+          "push_to": []
                     }
                 }
             }
@@ -174,31 +192,31 @@
         }
     },
     "storage": {
-        "engine": "xxx",
-        "base": "https://api.xxx.com",
-        "domain": "https://xxx.com",
+        "engine": "github",
+        "base": "https://api.github.com",
+        "domain": "https://gist.github.com",
         "items": {
             "xxx-clash": {
-                "username": "",
+                "username": "fgkhi",
                 "folderid": "",
-                "fileid": ""
+                "fileid": "clash-subs.json"
             },
             "xxx-singbox": {
-                "fileid": ""
+                "fileid": "singbox-subs.json"
             },
             "xxx-v2ray": {
-                "username": "",
-                "fileid": ""
+                "username": "fgkhi",
+                "fileid": "v2ray-subs.json"
             },
             "crawledsubs": {
-                "username": "",
+                "username": "fgkhi",
                 "folderid": "",
-                "fileid": ""
+                "fileid": "aggregated-subs.txt"
             },
             "crawledproxies": {
-                "username": "",
+                "username": "fgkhi",
                 "folderid": "",
-                "fileid": ""
+                "fileid": "aggregated-proxies.txt"
             }
         }
     }
