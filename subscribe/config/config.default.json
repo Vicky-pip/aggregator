@@ -1,222 +1,57 @@
 {
-    "domains": [
-        {
-            "name": "",
-            "sub": [],
-            "domain": "",
-            "enable": true,
-            "rename": "",
-            "include": "",
-            "exclude": "",
-            "push_to": [],
-            "ignorede": true,
-            "liveness": true,
-            "rate": 2.5,
-            "count": 2,
-            "coupon": "",
-            "secure": false,
-            "renew": {
-                "account": [
-                    {
-                        "email": "",
-                        "passwd": "",
-                        "ticket": {
-                            "enable": true,
-                            "autoreset": false,
-                            "subject": "",
-                            "message": "",
-                            "level": 1
-                        }
-                    }
-                ],
-                "plan_id": 3,
-                "package": "",
-                "method": 1,
-                "coupon_code": "",
-                "chatgpt": {
-                    "enable": true,
-                    "regex": "",
-                    "operate": "IN"
-                }
-            }
+  "domains": [
+    {
+      "name": "Flikify-Free-Node",
+      "url": "https://raw.githubusercontent.com/a2470982985/getNode/main/clash.yaml",
+      "push_to": ["free"]
+    },
+    {
+      "name": "anaer-Sub",
+      "url": "https://anaer.github.io/Sub/clash.yaml",
+      "push_to": ["free"]
+    },
+    {
+      "name": "sharecentre-clash",
+      "url": "https://sub.sharecentre.online/clash/scp.yml",
+      "push_to": ["free"]
+    },
+    {
+      "name": "toshiki-proxies",
+      "url": "https://proxypool.toshiki.top/clash/proxies",
+      "push_to": ["free"]
+    },
+    {
+      "name": "learnhard-free_proxy_ss",
+      "url": "https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/free",
+      "push_to": ["free"]
+    }
+  ],
+  "crawl": {
+    "enable": true,
+    "telegram": {
+      "enable": true,
+      "users": {
+        "FreeNodeDaily": {
+          "push_to": ["free"]
         }
-    ],
-   "crawl": {
-  "enable": true,
-  "exclude": "",
-  "threshold": 5,
-  "singlelink": true,
-  "persist": {
-    "subs": "crawledsubs",
-    "proxies": "crawledproxies"
-  },
-  "config": {
-    "rename": "",
-    "include": "v2ray|clash|订阅|节点|proxy|机场",
-    "exclude": "色情|VPN付费|广告",
-    "xxxxxxx": ""
-  },
-  "telegram": {
-    "enable": true,
-    "pages": 5,
-    "exclude": "bot",
-    "users": {
-      "channel": {
-        "include": "v2ray_subs|node_share|freev2raysub",
-        "exclude": "chatgpt|proxyapp",
-        "config": {
-          "rename": "TG频道订阅源"
-        },
-        "push_to": ["crawledsubs", "premium-clash", "free-clash"]
       }
     }
   },
-  "github": {
-    "enable": false,
-    "pages": 2,
-    "push_to": ["crawledsubs"],
-    "exclude": "backup|mirror",
-    "spams": ["spam", "test", "fake"]
-  },
-  "twitter": {
-    "enable": true,
-    "users": {
-      "username": {
-        "enable": true,
-        "num": 30,
-        "include": "freev2ray|clashsub|v2cross",
-        "exclude": "vpnstore",
-        "config": {
-          "rename": "推特节点源"
-        },
-        "push_to": ["premium-clash"]
-      }
-    }
-  },
-  "google": {
-    "enable": false,
-    "exclude": "",
-    "limits": 50,
-    "notinurl": ["facebook", "reddit"],
-    "push_to": []
-  },
-  "yandex": {
-    "enable": false,
-    "exclude": "",
-    "within": 3,
-    "pages": 3,
-    "notinurl": [],
-    "push_to": []
-  },
-  "repositories": [
-    {
-      "enable": true,
-      "username": "v2fly",
-      "repo_name": "v2ray-core",
-      "commits": 3,
-      "exclude": "",
-      "push_to": ["crawledsubs"]
-    },
-    {
-      "enable": true,
-      "username": "Fndroid",
-      "repo_name": "clash_for_windows_pkg",
-      "commits": 2,
-      "exclude": "",
-      "push_to": ["premium-clash"]
-    }
-  ],
-  "pages": [
-    {
-      "enable": true,
-      "url": "https://freefq.com/v2ray/",
-      "include": "v2ray|clash|sub",
-      "exclude": "广告|购买",
-      "multiple": true,
-      "placeholder": "",
-      "start": 1,
-      "end": 5,
-      "config": {
-        "rename": "FreeFQ节点源"
-      },
-      "push_to": ["crawledsubs", "premium-clash"]
-    },
-    {
-      "enable": true,
-      "url": "https://clashnode.com/",
-      "include": "clash|订阅",
-      "exclude": "购买|VPN",
-      "multiple": false,
-      "placeholder": "",
-      "config": {
-        "rename": "ClashNode聚合站"
-      },
-      "push_to": ["premium-clash"]
-    }
-  ],
-  "scripts": [
-    {
-      "enable": false,
-      "script": "custom_crawl#parse_subs",
-      "params": {
-        "persist": {
-          "fileid": ""
-        },
-        "any": "extra",
-        "config": {
-          "enable": true,
-          "liveness": true,
-          "exclude": "",
-          "rename": "",
-          "push_to": []
-                    }
-                }
-            }
-        ]
-    },
   "groups": {
-    "xxx": {
-        "emoji": true,
-        "list": true,
-        "targets": {
-            "clash": "premium-clash",
-            "singbox": "free-clash",
-            "v2ray": "crawledsubs"
-        },
-        "regularize": {
-            "enable": false,
-            "locate": true,
-            "residential": true,
-            "bits": 2
-        }
+    "free": {
+      "targets": {
+        "clash": "free-clash"
+      }
     }
-},
-"storage": {
+  },
+  "storage": {
     "engine": "gist",
-    "base": "https://api.github.com",
-    "domain": "https://gist.github.com",
     "items": {
-        "premium-clash": {
-            "username": "fgkhi",
-            "gistid": "48c12a6eabef69126934467e4cf72917",
-            "filename": "clash-subs.json"
-        },
-        "free-clash": {
-            "username": "fgkhi",
-            "gistid": "48c12a6eabef69126934467e4cf72917",
-            "filename": "singbox-subs.json"
-        },
-        "crawledsubs": {
-            "username": "fgkhi",
-            "gistid": "48c12a6eabef69126934467e4cf72917",
-            "filename": "aggregated-subs.txt"
-        },
-        "crawledproxies": {
-            "username": "fgkhi",
-            "gistid": "48c12a6eabef69126934467e4cf72917",
-            "filename": "aggregated-proxies.txt"
-        }
+      "free-clash": {
+        "username": "fgkhi",
+        "gistid": "c66d4f5c948a1914471f611930c02919",
+        "filename": "clash.yaml"
+      }
     }
+  }
 }
-
-            }
